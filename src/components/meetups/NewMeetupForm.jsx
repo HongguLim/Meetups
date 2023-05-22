@@ -4,20 +4,20 @@ import Card from "../ui/Card";
 export default function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
-  const adressInputRef = useRef();
+  const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
-    const enteredAdress = adressInputRef.current.value;
+    const enteredAddress = addressInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
     const meetupData = {
       title: enteredTitle,
       image: enteredImage,
-      adress: enteredAdress,
+      address: enteredAddress,
       description: enteredDescription,
     };
     props.onAddMeetup(meetupData);
@@ -35,8 +35,8 @@ export default function NewMeetupForm(props) {
           <input type="url" required id="image" ref={imageInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="adress">Adress</label>
-          <input type="text" required id="adress" ref={adressInputRef} />
+          <label htmlFor="address">Address</label>
+          <input type="text" required id="address" ref={addressInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor="description">Description</label>
